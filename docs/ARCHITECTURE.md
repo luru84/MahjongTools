@@ -8,7 +8,7 @@
 ## ルーティング案
 - `/` : Home（ツール一覧）
 - `/tools/score`, `/tools/ukeire`, `/tools/yaku`, `/tools/endgame`, `/tools/practice`, `/tools/shape`, `/tools/ref`, `/tools/ev`, `/tools/tracker`, `/tools/replay`
-- ルートごとにコンポーネントを遅延 import し、モバイルでの初期バンドルを削減。
+- ルートごとにコンポーネントを遅延 import し、モバイルでの初期バンドルを削減。各ルート meta に `title`（後で `<title>` へ反映）を設定。
 
 ## 状態管理
 - 現状はローカルステートのみで十分。必要になれば軽量なコンテキスト（provide/inject）で共通設定（テーマ/言語など）を共有。
