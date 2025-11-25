@@ -1,6 +1,6 @@
 # Mahjong Toolkit (Vue + TypeScript)
 
-ブラウザだけで使える麻雀ツール集。Vue 3 + Vite + TypeScript で構築し、GitHub Pages で公開しやすい構成です。
+ブラウザだけで使える麻雀ツール集。Vue 3 + Vite + TypeScript で構築し、GitHub Pages で公開しやすい構成です。スマホ専用 UI を前提（PC でもモバイル幅で表示）。
 
 ## 収録ツール
 - 点数計算/符計算と翻・符別の早見表
@@ -24,5 +24,6 @@ npm run dev
 - GitHub Pages: `vite.config.ts` の `base` をリポジトリ名に合わせて変更（デフォルト: `/MahjongTools/`）。Pages の `docs/` 配信なら `dist/` をそのまま指定可能。
 
 ## 開発メモ
+- ルーティングを導入し、トップページ + 各ツール個別ページに分割する予定（詳細は `docs/PLAN.md`）。
 - 主なロジックは `src/lib/mahjong.ts` に集約（待ち判定、点数計算など）。
 - UI は各ツールを小さなコンポーネントに分割しています。必要に応じてタブ/ページ分割してください。
