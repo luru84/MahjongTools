@@ -1,8 +1,9 @@
-/* eslint-disable vue/multi-word-component-names */
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 
 type Player = { name: string; score: number };
+
+defineOptions({ name: "PointsTracker" });
 
 const players = reactive<Player[]>([
   { name: "東", score: 25000 },
