@@ -23,7 +23,9 @@ const router = createRouter({
 });
 
 router.afterEach((to) => {
-  if (to.meta?.title) document.title = `${to.meta.title} | Mahjong Toolkit`;
+  const base = "Mahjong Toolkit";
+  if (to.meta?.title) document.title = `${to.meta.title} | ${base}`;
+  else document.title = base;
 });
 ```
 
