@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { defineOptions, reactive, ref } from "vue";
 
 type Player = { name: string; score: number };
 
