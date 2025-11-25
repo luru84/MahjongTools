@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import EndgameHelper from "./components/EndgameHelper.vue";
 import PointQuickRef from "./components/PointQuickRef.vue";
 import RiichiDecision from "./components/RiichiDecision.vue";

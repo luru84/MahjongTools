@@ -17,8 +17,8 @@ const model = computed(() => {
   const winP = winRate.value / 100;
   const dealP = dealInRate.value / 100;
 
-  const damaEv = winP * tsumoGain - dealP * dealInLoss;
-  const riichiEv = winP * (tsumoGain + 1000) - dealP * dealInLoss - (1 - winP) * 1000;
+  const damaEv = winP * tsumoGain - dealP * dealInLoss.value;
+  const riichiEv = winP * (tsumoGain + 1000) - dealP * dealInLoss.value - (1 - winP) * 1000;
 
   return { ronPoint, tsumoGain, damaEv, riichiEv, diff: riichiEv - damaEv };
 });
