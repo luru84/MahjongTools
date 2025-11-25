@@ -26,11 +26,21 @@
 - [x] meta.title フォーマットとドキュメントタイトル更新の仕様化。
 
 ## 4. 実装（feature ブランチで対応）
-- [ ] Vue Router 導入、コンポーネントのページ分割。
-- [ ] スタイルのモバイル最適化（max-width、余白、タップ領域）。
-- [ ] 既存ツールコンポーネントを各ページへ配置・微調整。
-- [ ] オフライン対応の BASE 対応確認（Service Worker と base の組み合わせ）。
-- [ ] 単体テスト追加（`src/lib/mahjong.ts`: 待ち判定、点数計算）。
+- feat/router-shell
+  - [ ] Vue Router 導入、ページ分割の骨組み（Home + `/tools/:id` プレースホルダ）。
+  - [ ] 共通レイアウト/タイトル更新/スクロールトップ。
+- feat/pages-migration
+  - [ ] 既存ツールコンポーネントを各ページへ配置。
+  - [ ] Home カード/メニューから遷移できるようにする。
+- feat/theme-mobile-tuning
+  - [ ] モバイル余白/見出し調整。
+  - [ ] テーマトークン/切替 UI 追加。
+- feat/tests-lib
+  - [ ] `src/lib/mahjong.ts` のユニットテスト追加。
+  - [ ] プレースホルダテストを実テストに置き換え。
+- 共通
+  - [ ] スタイルのモバイル最適化（max-width、余白、タップ領域）。
+  - [ ] オフライン対応の BASE 確認（Service Worker と base の組み合わせ）。
 
 ## 4. テスト
 - [x] テスト計画ドキュメント作成（TEST_PLAN.md）。
