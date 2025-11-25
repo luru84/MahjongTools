@@ -1,8 +1,9 @@
 {
   "extends": "./tsconfig.node.json",
   "compilerOptions": {
-    "composite": true,
-    "types": ["vite/client"]
+    "composite": false,
+    "skipLibCheck": true,
+    "types": ["vite/client", "node"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "src/**/*.vue"]
 }
