@@ -27,6 +27,7 @@
 - [ ] 単体テスト追加（`src/lib/mahjong.ts`: 待ち判定、点数計算）。
 
 ## 4. テスト
+- [x] テスト計画ドキュメント作成（TEST_PLAN.md）。
 - [ ] 手動スモーク（全ページ遷移・主要操作）。
 - [ ] CI で lint/typecheck/test/build を流す。
 - [ ] 端末確認（iOS Safari/Android Chrome で表示崩れチェック）。
