@@ -10,6 +10,23 @@
 - `/tools/score`, `/tools/ukeire`, `/tools/yaku`, `/tools/endgame`, `/tools/practice`, `/tools/shape`, `/tools/ref`, `/tools/ev`, `/tools/tracker`, `/tools/replay`
 - ルートごとにコンポーネントを遅延 import し、モバイルでの初期バンドルを削減。各ルート meta に `title`（後で `<title>` へ反映）を設定。
 
+### ルート定義例
+```ts
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior: () => ({ top: 0 }),
+  routes: [
+    { path: "/", name: "home", component: () => import("./pages/Home.vue"), meta: { title: "Mahjong Toolkit" } },
+    { path: "/tools/score", name: "score", component: () => import("./pages/ScorePage.vue"), meta: { title: "点数計算" } },
+    // ...以下各ツール
+  ],
+});
+
+router.afterEach((to) => {
+  if (to.meta?.title) document.title = `${to.meta.title} | Mahjong Toolkit`;
+});
+```
+
 ## 状態管理
 - 現状はローカルステートのみで十分。必要になれば軽量なコンテキスト（provide/inject）で共通設定（テーマ/言語など）を共有。
 - 永続化は不要（ページ内のみ保持）。点棒などを永続化する場合は localStorage を検討。
