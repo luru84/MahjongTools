@@ -49,7 +49,7 @@
 - [ ] 端末確認（iOS Safari/Android Chrome で表示崩れチェック）。
 
 ## 5. リリース
-- [ ] Pages デプロイ動作確認（`base` と manifest/scope の整合性）。
+- [ ] Pages デプロイ動作確認（`base` と manifest/scope の整合性、hash history）。
 - [x] README にルーティング/操作ガイド追記。
 - [ ] バージョンタグ付与（任意）。
 
