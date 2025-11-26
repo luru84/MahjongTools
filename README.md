@@ -23,6 +23,11 @@ npm run dev
 - ローカル確認: `npm run preview`
 - GitHub Pages: `vite.config.ts` の `base` をリポジトリ名に合わせて変更（デフォルト: `/MahjongTools/`）。Pages の `docs/` 配信なら `dist/` をそのまま指定可能。
 
+## ルーティング/操作
+- Vue Router を使用。ホーム `/` と各ツール `/tools/:id`（例: `/tools/score`, `/tools/ukeire`）。
+- メニューはヘッダー（ハンバーガー/リスト）に集約。Home からカードでも遷移可。
+- オフライン: 初回アクセス後、Service Worker によりキャッシュしてオフラインでも主要機能が動作（ベストエフォート）。
+
 ## 開発メモ
 - ルーティングを導入し、トップページ + 各ツール個別ページに分割する予定（詳細は `docs/PLAN.md`）。
 - 主なロジックは `src/lib/mahjong.ts` に集約（待ち判定、点数計算など）。
