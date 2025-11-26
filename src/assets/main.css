@@ -134,6 +134,7 @@ button {
   border: none;
   border-radius: 12px;
   padding: 10px 14px;
+  background-color: var(--accent);
   background: linear-gradient(120deg, var(--accent), var(--accent-2));
   color: var(--accent-contrast);
   font-weight: 700;
