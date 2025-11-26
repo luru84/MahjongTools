@@ -1,10 +1,13 @@
 import { describe, expect, it } from "vitest";
 import {
   calcPoints,
+  countsToString,
   isWinningHand,
   parseHand,
   shapeSummary,
   winningTilesForTenpai,
+  bestDiscardByUkeire,
+  requiredCombosForGap,
 } from "../src/lib/mahjong";
 
 describe("mahjong logic", () => {
@@ -38,5 +41,29 @@ describe("mahjong logic", () => {
     const summary = shapeSummary(hand);
     expect(summary.sequences.length).toBeGreaterThan(0);
     expect(summary.pairs).toContain("東");
+  });
+
+  it("roundtrips parseHand and countsToString", () => {
+    const input = "123m456p789s東東南南";
+    const counts = parseHand(input);
+    const out = countsToString(counts);
+    expect(out.replace(/\s+/g, "")).toContain("123m");
+    expect(out.replace(/\s+/g, "")).toContain("456p");
+    expect(out.replace(/\s+/g, "")).toContain("789s");
+  });
+
+  it("suggests best discard by ukeire", () => {
+    const hand = parseHand("233m456p678s55m白白白");
+    const suggestion = bestDiscardByUkeire(hand);
+    expect(suggestion).not.toBeNull();
+    if (suggestion) {
+      expect(suggestion.ukeire).toBeGreaterThan(0);
+    }
+  });
+
+  it("returns required combos for gap", () => {
+    const combos = requiredCombosForGap(8000, { dealer: false, tsumo: false });
+    expect(combos.length).toBeGreaterThan(0);
+    expect(combos[0].han).toBeGreaterThan(0);
   });
 });
