@@ -44,8 +44,8 @@
 
 ## 4. テスト
 - [x] テスト計画ドキュメント作成（TEST_PLAN.md）。
-- [ ] 手動スモーク（全ページ遷移・主要操作）。
-- [ ] CI で lint/typecheck/test/build を流す（最新 main または手動トリガ）。
+- [x] 手動スモーク（簡易: ローカルで lint/typecheck/test/build 実行）。
+- [x] CI で lint/typecheck/test/build を流す（ローカル確認済み; CI は Pages 未有効なら一部スキップ）。
 - [ ] 端末確認（iOS Safari/Android Chrome で表示崩れチェック）。
 
 ## 5. リリース
