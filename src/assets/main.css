@@ -1,10 +1,18 @@
 :root {
   font-family: "Sora", "Noto Sans JP", "Hiragino Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
-  color: #0f172a;
-  background: radial-gradient(160% 120% at 10% 10%, #e0f2fe 0%, #eef2ff 40%, #f8fafc 100%);
-  min-height: 100%;
   line-height: 1.6;
   font-weight: 500;
+  --accent: #2563eb;
+  --accent-2: #7c3aed;
+  --accent-contrast: #ffffff;
+  --bg: #f8fafc;
+  --bg-soft: #eef2ff;
+  --card: #ffffffd9;
+  --text: #0f172a;
+  --muted: #64748b;
+  color: var(--text);
+  background: radial-gradient(160% 120% at 10% 10%, #e0f2fe 0%, #eef2ff 40%, #f8fafc 100%);
+  min-height: 100%;
 }
 
 *,
@@ -21,7 +29,7 @@ body {
 #app {
   max-width: 640px;
   margin: 0 auto;
-  padding: 20px 12px 32px;
+  padding: 16px 12px 32px;
 }
 
 .main-container {
@@ -70,7 +78,7 @@ main {
 }
 
 .panel {
-  background: #ffffffd9;
+  background: var(--card);
   border: 1px solid #e2e8f0;
   border-radius: 18px;
   padding: 18px 16px;
@@ -126,8 +134,8 @@ button {
   border: none;
   border-radius: 12px;
   padding: 10px 14px;
-  background: linear-gradient(120deg, #2563eb, #7c3aed);
-  color: #fff;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: var(--accent-contrast);
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 30px -12px rgba(37, 99, 235, 0.6);
@@ -201,7 +209,7 @@ button:active {
 }
 
 .muted {
-  color: #64748b;
+  color: var(--muted);
   font-size: 13px;
 }
 
