@@ -4,6 +4,12 @@ import { RouterLink } from "vue-router";
 import { toolRoutes } from "../router/tools";
 
 const menuOpen = ref(false);
+const themes = [
+  { id: "blue", label: "Blue", vars: { "--accent": "#2563eb", "--accent-2": "#7c3aed" } },
+  { id: "red", label: "Red", vars: { "--accent": "#ef4444", "--accent-2": "#f97316" } },
+  { id: "green", label: "Green", vars: { "--accent": "#10b981", "--accent-2": "#0ea5e9" } },
+];
+const theme = ref(localStorage.getItem("theme") || "blue");
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
@@ -12,6 +18,16 @@ const toggleMenu = () => {
 const closeMenu = () => {
   menuOpen.value = false;
 };
+
+const applyTheme = (id: string) => {
+  const found = themes.find((t) => t.id === id) || themes[0];
+  Object.entries(found.vars).forEach(([k, v]) => {
+    document.documentElement.style.setProperty(k, v);
+  });
+  localStorage.setItem("theme", found.id);
+};
+
+applyTheme(theme.value);
 </script>
 
 <template>
@@ -26,6 +42,14 @@ const closeMenu = () => {
       <RouterLink v-for="route in toolRoutes" :key="route.path" :to="route.path" @click="closeMenu">
         {{ route.meta?.title || route.name }}
       </RouterLink>
+      <div class="theme">
+        <label>
+          <span class="muted">テーマ</span>
+          <select v-model="theme" @change="applyTheme(theme)">
+            <option v-for="t in themes" :key="t.id" :value="t.id">{{ t.label }}</option>
+          </select>
+        </label>
+      </div>
     </nav>
   </header>
 </template>
@@ -72,6 +96,14 @@ const closeMenu = () => {
 .menu a {
   text-decoration: none;
   color: #0b1030;
+}
+.theme {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.theme select {
+  min-width: 140px;
 }
 .menu.open {
   display: flex;
