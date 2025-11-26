@@ -39,13 +39,13 @@
   - [x] `src/lib/mahjong.ts` のユニットテスト追加。
   - [x] プレースホルダテストを実テストに置き換え。
 - 共通
-  - [ ] スタイルのモバイル最適化（max-width、余白、タップ領域）。
-  - [ ] オフライン対応の BASE 確認（Service Worker と base の組み合わせ）。
+  - [ ] スタイルの最終モバイル確認（max-width、余白、タップ領域）。
+  - [ ] オフライン対応の確認（Service Worker と base の組み合わせ）。
 
 ## 4. テスト
 - [x] テスト計画ドキュメント作成（TEST_PLAN.md）。
 - [ ] 手動スモーク（全ページ遷移・主要操作）。
-- [ ] CI で lint/typecheck/test/build を流す。
+- [ ] CI で lint/typecheck/test/build を流す（最新 main または手動トリガ）。
 - [ ] 端末確認（iOS Safari/Android Chrome で表示崩れチェック）。
 
 ## 5. リリース
