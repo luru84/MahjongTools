@@ -1,4 +1,4 @@
-const CACHE_NAME = "mahjongtools-cache-v1";
+const CACHE_NAME = "mahjongtools-cache-v2";
 const BASE = self.registration.scope;
 const PRECACHE = [
   BASE,
